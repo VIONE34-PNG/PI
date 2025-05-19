@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/alterar.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+    <title>Alterar dados</title>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+            <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo">
+            <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar">
+        </div>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Como podemos te ajudar?" class="search-bar">
+                <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon">
+            </div>
+             <div id="userMenu" class="user-menu" style="position: relative;">
+                <button id="userButton" class="userBtn">Usuário</button>
+                <div id="menuDropdown" class="dropdown">
+                  <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br>
+                  <a href="#" id="pedidosBtn">Meus pedidos</a><br>
+                  <a href="#" id="logoutBtn">Sair</a><br>
+                </div>
+            <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho">
+            </a>
+        </div>
+    </header>
+
+    <section class="editar">
+        <a href="/ecommerce/frontend/index.html" class="voltar" alt="voltar">
+            <img src="/ecommerce/frontend/assets/angle-left.png">
+        </a>
+        <h2>Alterar dados</h2>
+    </section>
+
+    <div class="container">
+        <div class="coluna-esquerda">
+            <!-- Formulário de Dados Pessoais -->
+            <form id="formEditarDados" class="form-cadastro">
+                <h2>Editar Cadastro</h2>
+                <span id="mensagemDados" class="mensagem-erro" style="display: none;"></span>
+
+                <div class="linha">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" placeholder="Nome Completo" required />
+                </div>
+
+                <div class="linha">
+                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input type="date" id="dataNascimento" required />
+                </div>
+
+                <div class="linha">
+                    <label for="genero">Gênero</label>
+                    <select id="genero" required>
+                        <option value="">Selecione o Gênero</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                </div>
+
+                <button type="submit">Salvar Alterações</button>
+            </form>
+
+            <!-- Formulário de Troca de Senha -->
+            <form id="formTrocarSenha" class="form-cadastro">
+                <h2>Trocar Senha</h2>
+                <span id="mensagemSenha" class="mensagem-erro" style="display: none;"></span>
+
+                <div class="linha">
+                    <label for="senhaAtual">Senha Atual</label>
+                    <input type="password" id="senhaAtual" placeholder="Senha Atual" required />
+                </div>
+
+                <div class="linha">
+                    <label for="novaSenha">Nova Senha</label>
+                    <input type="password" id="novaSenha" placeholder="Nova Senha" required />
+                </div>
+
+                <div class="linha">
+                    <label for="confirmarSenha">Confirmar Nova Senha</label>
+                    <input type="password" id="confirmarSenha" placeholder="Confirmar Nova Senha" required />
+                </div>
+
+                <button type="submit">Atualizar Senha</button>
+            </form>
+        </div>
+
+        <!-- Formulário de Endereço -->
+        <div class="coluna-direita">
+            <form id="formNovoEndereco" class="form-cadastro">
+                <h2>Adicionar Endereço de Entrega</h2>
+                <span id="mensagemEndereco" class="mensagem-erro" style="display: none;"></span>
+
+                <div class="linha">
+                    <label for="cep">CEP</label>
+                    <input type="text" id="cep" placeholder="CEP" required />
+                </div>
+
+                <div class="linha">
+                    <label for="rua">Rua</label>
+                    <input type="text" id="rua" placeholder="Rua" required />
+                </div>
+
+                <div class="linha">
+                    <label for="numero">Número</label>
+                    <input type="text" id="numero" placeholder="Número" required />
+                </div>
+
+                <div class="linha">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" id="complemento" placeholder="Complemento" />
+                </div>
+
+                <div class="linha">
+                    <label for="bairro">Bairro</label>
+                    <input type="text" id="bairro" placeholder="Bairro" required />
+                </div>
+
+                <div class="linha">
+                    <label for="cidade">Cidade</label>
+                    <input type="text" id="cidade" placeholder="Cidade" required />
+                </div>
+
+                <div class="linha">
+                    <label for="uf">UF</label>
+                    <input type="text" id="uf" placeholder="UF" required maxlength="2" />
+                </div>
+
+                <div class="linha">
+                    <label>
+                        <input type="checkbox" id="enderecoPadrao" />
+                        Definir como endereço padrão
+                    </label>
+                </div>
+
+                <button type="submit">Adicionar Endereço</button>
+            </form>
+
+            <!-- Lista de Endereços Salvos -->
+            <div class="form-cadastro" style="margin-top: 20px;">
+                <h2>Endereços Salvos</h2>
+                <ul id="listaEnderecos" style="list-style: none; padding: 0; margin: 0;"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/ecommerce/frontend/js/alterarDados.js"></script>
+    <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+</body>
+</html>

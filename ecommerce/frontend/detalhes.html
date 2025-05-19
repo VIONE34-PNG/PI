@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+             <a href="/ecommerce/frontend/index.html">
+                <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            </a>
+            <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar">
+        </div>
+        </nav>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Como podemos te ajudar?" class="search-bar">
+                <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon">
+            </div>
+            <div id="userMenu" class="user-menu" style="position: relative;">
+                <button id="userButton" class="userBtn">Usuário</button>
+                <div id="menuDropdown" class="dropdown">
+                  <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br>
+                  <a href="#" id="pedidosBtn">Meus pedidos</a><br>
+                  <a href="#" id="logoutBtn">Sair</a><br>
+                </div>
+            <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho">
+            </a>
+        </div>
+    </header>
+
+    <section class="detalhes">
+            <a href="/ecommerce/frontend/index.html" class="voltar" alt="voltar">
+                <img src="/ecommerce/frontend/assets/angle-left.png">
+            </a>
+        <h2>Detalhes do produto</h2>
+    </section>
+    <section class="detalhes-produto">
+        <div class="detalhe-container">
+            <div class="detalhe-info">
+                <h1 id="nome-produto"></h1>
+                <p id="avaliacao-produto"></p>
+                <p id="preco-produto"></p>
+                <p id="descricao-produto"></p>
+                <button id="comprar-botao" class="botao-comprar">Comprar</button>
+            </div>
+
+            <div class="detalhe-carrossel">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper" id="swiper-wrapper">
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+    <script src="/ecommerce/frontend/js/detalhes.js"></script>
+</body>
+</html>

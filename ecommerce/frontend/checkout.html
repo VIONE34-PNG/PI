@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <title>Checkout</title>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+             <a href="/ecommerce/frontend/index.html">
+                <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            </a>
+            <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar" />
+        </div>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Como podemos te ajudar?" class="search-bar" />
+                <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon" />
+            </div>
+            <div id="userMenu" class="user-menu" style="position: relative;">
+                <a href="/ecommerce/frontend/login.html" id="userButton" class="userBtn">Usuário</a>
+                <div id="menuDropdown" class="dropdown">
+                    <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br />
+                    <a href="/ecommerce/frontend/pedidos.html" id="pedidosBtn">Meus pedidos</a><br />
+                    <a href="#" id="logoutBtn">Sair</a><br />
+                </div>
+                <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                    <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho" />
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="checkout-container">
+        <section class="customer-info">
+            <h2>Informações do Cliente</h2>
+            <input type="text" id="nome" placeholder="Nome Completo" readonly />
+            <input type="email" id="email" placeholder="E-mail" readonly />
+            <input type="text" id="telefone" placeholder="(XX) XXXXX-XXXX" maxlength="15" />
+        </section>
+
+        <section class="shipping-address">
+            <h2>Endereço de Entrega</h2>
+
+            <div id="lista-enderecos">
+            </div>
+
+            <button id="btn-adicionar-endereco" type="button">Adicionar Novo Endereço</button>
+
+            <div id="novo-endereco" style="display: none; margin-top: 1em;">
+                <label for="novo-endereco-rua">Rua *</label>
+                <input type="text" id="novo-endereco-rua" placeholder="Digite a rua" />
+
+                <label for="novo-endereco-numero">Número</label>
+                <input type="text" id="novo-endereco-numero" placeholder="Número" />
+
+                <label for="novo-endereco-complemento">Complemento</label>
+                <input type="text" id="novo-endereco-complemento" placeholder="Complemento" />
+
+                <label for="novo-endereco-bairro">Bairro</label>
+                <input type="text" id="novo-endereco-bairro" placeholder="Bairro" />
+
+                <label for="novo-endereco-cep">CEP *</label>
+                <input type="text" id="novo-endereco-cep" placeholder="Digite o CEP" />
+
+                <label for="novo-endereco-cidade">Cidade *</label>
+                <input type="text" id="novo-endereco-cidade" placeholder="Digite a cidade" />
+
+                <label for="novo-endereco-estado">Estado (UF) *</label>
+                <input type="text" id="novo-endereco-estado" placeholder="Digite o estado" />
+
+                <button id="salvar-endereco" type="button">Salvar Endereço</button>
+            </div>
+        </section>
+
+        <section class="cart-summary">
+            <h2>Resumo do Carrinho</h2>
+            <ul id="cart-items"></ul>
+            <div class="total">
+                <p><strong>Total:</strong> <span id="total-price">R$ 0,00</span></p>
+            </div>
+        </section>
+
+        <section class="payment-method">
+            <h2>Forma de Pagamento</h2>
+            <div class="input-group">
+                <label for="pagamento">Escolha uma forma de pagamento</label>
+                <select id="pagamento" name="pagamento" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="boleto">Boleto</option>
+                    <option value="cartao">Cartão de Crédito</option>
+                </select>
+            </div>
+
+            <div id="cartao-info" class="payment-info" style="display: none;">
+                <div class="input-group">
+                    <label for="numero-cartao">Número do Cartão</label>
+                    <input type="text" id="numero-cartao" name="numero-cartao" />
+                </div>
+                <div class="input-group">
+                    <label for="codigo-cartao">Código de Verificação (CVV)</label>
+                    <input type="text" id="codigo-cartao" name="codigo-cartao" />
+                </div>
+                <div class="input-group">
+                    <label for="nome-cartao">Nome Completo</label>
+                    <input type="text" id="nome-cartao" name="nome-cartao" />
+                </div>
+                <div class="input-group">
+                    <label for="vencimento-cartao">Data de Vencimento</label>
+                    <input type="month" id="vencimento-cartao" name="vencimento-cartao" />
+                </div>
+                <div class="input-group">
+                    <label for="parcelas-cartao">Quantidade de Parcelas</label>
+                    <input type="number" id="parcelas-cartao" name="parcelas-cartao" min="1" max="12" />
+                </div>
+            </div>
+
+            <div id="boleto-info" class="payment-info" style="display: none;">
+                <p>Escolha a opção "Boleto" para gerar o boleto de pagamento.</p>
+            </div>
+
+            <button type="button" id="resumo-pedido">Resumo do Pedido</button>
+
+            <button type="button" id="voltar-pagamento" onclick="window.location.href='/ecommerce/frontend/carrinho.html'">Voltar</button>
+        </section>
+    </div>
+
+    <script src="/ecommerce/frontend/js/checkout.js"></script>
+    <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+</body>
+</html>

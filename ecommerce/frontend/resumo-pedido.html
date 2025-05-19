@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/resumo-pedido.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Resumo do Pedido</title>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+             <a href="/ecommerce/frontend/index.html">
+                <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            </a>
+        </div>
+    </header>
+    <main>
+        <section class="order-summary">
+            <h2>Detalhes do Pedido</h2>
+            <p><strong>Número do Pedido:</strong> <span id="numero-pedido">---</span></p>
+            <p><strong>Data do Pedido:</strong> <span id="data-pedido">---</span></p>
+            <p><strong>Status:</strong> <span id="status-pedido">---</span></p>
+        </section>
+
+        <section class="products-summary">
+            <h2>Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="totals-summary">
+            <h2>Resumo Financeiro</h2>
+            <p><strong>Frete:</strong> <span id="shipping-cost">R$ 0,00</span></p>
+            <p><strong>Valor Total:</strong> <span id="total-value">R$ 0,00</span></p>
+        </section>
+
+        <section class="delivery-summary">
+            <h2>Endereço de Entrega</h2>
+            <p id="delivery-address">---</p>
+        </section>
+
+        <section class="payment-summary">
+            <h2>Forma de Pagamento</h2>
+            <p id="payment-method">---</p>
+        </section>
+
+        <button onclick="window.location.href='/ecommerce/frontend/checkout.html'">Voltar</button>
+        <button id="finalizar-pedido">Concluir Compra</button>
+    </main>
+    <script src="/ecommerce/frontend/js/resumo-pedido.js"></script>
+</body>
+</html>

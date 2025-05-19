@@ -1,0 +1,117 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 40px;
+}
+
+.menu_bar {
+  height: 24px;
+  cursor: pointer;
+}
+
+.cadastro-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.btn-voltar {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-voltar:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.form-cadastro h2 {
+  margin-bottom: 1rem;
+}
+
+.form-cadastro .linha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-cadastro input,
+.form-cadastro select {
+  flex: 1;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.botoes-endereco {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.botoes-endereco button {
+  background-color: #eee;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.botoes-endereco button:hover {
+  background-color: #ddd;
+}
+
+.btn-cadastrar {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn-cadastrar:hover {
+  background-color: #0056b3;
+}
+
+.mensagem-erro {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>e-commerce</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="logo-menu">
+            <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar" />
+        </div>
+
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Como podemos te ajudar?" class="search-bar" />
+                <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon" />
+            </div>
+
+            <div id="userMenu" class="user-menu" style="position: relative;">
+                <button id="userButton" class="userBtn">Usuário</button>
+                <div id="menuDropdown" class="dropdown" style="display: none;">
+                    <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br />
+                    <a href="/ecommerce/frontend/pedidos.html" id="pedidosBtn">Meus pedidos</a><br />
+                    <!-- Link para área do estoquista, inicialmente oculto -->
+                    <a href="/ecommerce/frontend/estoquista.html" id="estoquistaLink" style="display: none;">Área do Estoquista</a><br />
+                    <a href="#" id="logoutBtn">Sair</a><br />
+                </div>
+            </div>
+
+            <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho" />
+            </a>
+        </div>
+    </header>
+
+    <section class="titulo">
+        <h1>Ofertas especiais</h1>
+    </section>
+
+    <div class="produtos" id="produtos"></div>
+
+    <script src="/ecommerce/frontend/js/home.js"></script>
+    <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+</body>
+
+</html>

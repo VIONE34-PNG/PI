@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Cliente</title>
+  <link rel="stylesheet" href="../frontend/css/cadastar.css"/>
+  <link rel="stylesheet" href="../frontend/css/styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <div class="logo-menu">
+      <a href="/ecommerce/frontend/index.html">
+        <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+      </a>
+      <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar">
+    </div>
+    <div class="top-bar">
+      <div class="search-container">
+        <input type="text" placeholder="Como podemos te ajudar?" class="search-bar">
+        <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon">
+      </div>
+      <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+        <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho">
+      </a>
+    </div>
+  </header>
+
+  <main class="cadastro-container">
+    <a href="/ecommerce/frontend/index.html" class="btn-voltar">← Voltar ao Início</a>
+
+    <form id="formCadastro" class="form-cadastro">
+      <h2>Crie sua conta</h2>
+      <span id="mensagem" class="mensagem-erro"></span>
+
+      <div class="linha">
+        <input type="text" id="nome" placeholder="Nome Completo" required />
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+
+      <div class="linha">
+        <input type="password" id="senha" placeholder="Senha" required />
+        <input type="password" id="confirmarSenha" placeholder="Confirmar Senha" required />
+        <input type="text" id="cpf" placeholder="CPF" required />
+      </div>
+
+      <!-- Novo campo para tipo de usuário -->
+      <div class="linha">
+        <label for="tipoUsuario">Tipo de Usuário:</label>
+        <select id="tipoUsuario" required>
+          <option value="">Selecione o tipo</option>
+          <option value="cliente">Cliente</option>
+          <option value="estoquista">Estoquista</option>
+        </select>
+      </div>
+
+      <div class="linha">
+        <input type="date" id="dataNascimento" required />
+        <select id="genero" required>
+          <option value="">Selecione o gênero</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+
+      <h3>Endereço de Faturamento</h3>
+      <div class="linha">
+        <input type="text" id="cep" placeholder="CEP" required />
+        <input type="text" id="logradouro" placeholder="Logradouro" required />
+        <input type="text" id="numero" placeholder="Número" required />
+      </div>
+      <div class="linha">
+        <input type="text" id="complemento" placeholder="Complemento" />
+        <input type="text" id="bairro" placeholder="Bairro" required />
+        <input type="text" id="cidade" placeholder="Cidade" required />
+        <input type="text" id="uf" placeholder="UF" required />
+      </div>
+
+      <h3>Endereços de Entrega</h3>
+      <div id="enderecosEntrega"></div>
+
+      <div class="botoes-endereco">
+        <button type="button" onclick="adicionarEndereco()">+ Adicionar Endereço</button>
+        <button type="button" onclick="copiarEndereco()">Copiar do Faturamento</button>
+      </div>
+
+      <button type="submit" class="btn-cadastrar">Cadastrar</button>
+    </form>
+  </main>
+
+  <script src="../frontend/js/cadastrar.js"></script>
+</body>
+</html>

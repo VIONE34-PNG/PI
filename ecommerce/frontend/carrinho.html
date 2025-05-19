@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/ecommerce/frontend/css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <title>Carrinho</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo-menu">
+            <a href="/ecommerce/frontend/index.html">
+                <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            </a>
+                <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar">
+            </div>
+            </nav>
+            <div class="top-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Como podemos te ajudar?" class="search-bar">
+                    <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon">
+                </div>
+                 <div id="userMenu" class="user-menu" style="position: relative;">
+                <button id="userButton" class="userBtn">Usuário</button>
+                <div id="menuDropdown" class="dropdown">
+                  <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br>
+                  <a href="#" id="pedidosBtn">Meus pedidos</a><br>
+                  <a href="#" id="logoutBtn">Sair</a><br>
+                </div>
+                <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                    <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho">
+                </a>
+            </div>
+        </header>
+
+        <section class="detalhes">
+            <a href="/ecommerce/frontend/index.html" class="voltar" alt="voltar">
+                <img src="/ecommerce/frontend/assets/angle-left.png">
+            </a>
+        <h2>Carrinho</h2>
+    </section>
+    
+    <section class="carrinho-container">
+        <div class="produtos" id="lista-carrinho">
+        </div>
+        <div class="cep-section">
+            <label for="cep">Informe seu CEP:</label>
+            <input type="text" id="cep" placeholder="00000-000" />
+            <button id="calcular-frete">Calcular Frete</button>
+        </div>
+        <div id="frete-opcoes">
+            <label for="frete-select">Escolha o frete:</label>
+            <select id="frete-select"></select>
+        </div>
+        <div class="resumo" id="resumo-carrinho">
+        </div>
+        
+        <button id="limpar-carrinho" class="botao-limpar">Limpar Carrinho</button>
+        <button id="finalizar-compra" class="botao-finalizar">Comprar</button>
+      </section>
+        <script src="/ecommerce/frontend/js/carrinho.js"></script>
+        <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+    </body>
+</html>

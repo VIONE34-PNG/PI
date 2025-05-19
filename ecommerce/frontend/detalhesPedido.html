@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/styles.css" />
+     <link rel="stylesheet" href="css/resumo-pedido.css"/>
+    <title>Detalhes do pedido</title>
+</head>
+<body>
+    <header>
+        <div class="logo-menu">
+             <a href="/ecommerce/frontend/index.html">
+                <img src="/ecommerce/frontend/assets/logo.png" alt="Logo da Loja" class="logo" />
+            </a>
+            <img id="menu-toggle" src="/ecommerce/frontend/assets/menu-burger.png" alt="Menu" class="menu-bar" />
+        </div>
+        <div class="top-bar">
+            <div class="search-container">
+                <input type="text" placeholder="Como podemos te ajudar?" class="search-bar" />
+                <img src="/ecommerce/frontend/assets/search.png" alt="pesquisar" class="search-icon" />
+            </div>
+            <div id="userMenu" class="user-menu" style="position: relative;">
+                <a href="#" id="userButton" class="userBtn">Usuário</a>
+                <div id="menuDropdown" class="dropdown">
+                    <a href="/ecommerce/frontend/alterar.html">Alterar meus dados</a><br />
+                    <a href="/ecommerce/frontend/pedidos.html" id="pedidosBtn">Meus pedidos</a><br />
+                    <a href="#" id="logoutBtn">Sair</a><br />
+                </div>
+                <a href="/ecommerce/frontend/carrinho.html" class="carrinho">
+                    <img src="/ecommerce/frontend/assets/cart.png" alt="Carrinho" class="icone-carrinho" />
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="detalhes">
+            <a href="/ecommerce/frontend/pedidos.html" class="voltar" alt="voltar">
+                <img src="/ecommerce/frontend/assets/angle-left.png">
+            </a>
+        <h1>Detalhes</h1>
+    </section>
+    <main>
+        <section class="order-summary">
+            <h2>Detalhes do Pedido</h2>
+            <p><strong>Número do Pedido:</strong> <span id="numero-pedido">---</span></p>
+            <p><strong>Data do Pedido:</strong> <span id="data-pedido">---</span></p>
+            <p><strong>Status:</strong> <span id="status-pedido">---</span></p>
+        </section>
+
+        <section class="products-summary">
+            <h2>Produtos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total - Produto</th>
+                    </tr>
+                </thead>
+                <tbody id="order-items">
+                </tbody>
+            </table>
+        </section>
+
+        <section class="totals-summary">
+            <h2>Resumo Financeiro</h2>
+            <p><strong>Frete:</strong> <span id="shipping-cost">R$ 0,00</span></p>
+            <p><strong>Valor Total:</strong> <span id="total-value">0,00</span></p>
+        </section>
+
+        <section class="delivery-summary">
+            <h2>Endereço de Entrega</h2>
+            <p id="delivery-address">---</p>
+        </section>
+
+        <section class="payment-summary">
+            <h2>Forma de Pagamento</h2>
+            <p id="payment-method">---</p>
+        </section>
+    </main>
+    <script	src="/ecommerce/frontend/js/detalhesPedidos.js"></script>
+    <script src="/ecommerce/frontend/js/sessaoLogin.js"></script>
+</body>
+</html>
