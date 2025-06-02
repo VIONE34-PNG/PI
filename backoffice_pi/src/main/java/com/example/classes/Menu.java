@@ -101,7 +101,7 @@ public class Menu {
             case 1 -> alterarUsuario(usuarioEscolhido);
             case 2 -> alterarSenha(usuarioEscolhido);
             case 3 -> habilitarDesabilitar(usuarioEscolhido);
-            case 4 -> { /* volta para a lista de usuários */ }
+            case 4 -> { }
         }
     }
     
@@ -160,9 +160,9 @@ public class Menu {
         if (novoStatus != null) {
             boolean atualizado = pedidoDAO.atualizarStatus(idPedido, novoStatus);
             if (atualizado) {
-                System.out.println("✅ Status atualizado com sucesso!");
+                System.out.println("Status atualizado com sucesso!");
             } else {
-                System.out.println("❌ Erro ao atualizar status.");
+                System.out.println("Erro ao atualizar status.");
             }
         }
     }
