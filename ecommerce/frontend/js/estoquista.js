@@ -7,32 +7,6 @@ const statusOptions = [
     "ENTREGUE",
     "CANCELADO"
 ];
-
-const verificarPermissaoEstoquista = async () => {
-    try {
-        const response = await fetch("http://127.0.0.1:8080/api/usuarios/sessao", {
-            credentials: "include",
-        });
-
-        if (!response.ok) throw new Error("Sessão não encontrada.");
-
-        const usuario = await response.json();
-
-        if (!usuario || usuario.tipo?.toLowerCase() !== "estoquista") {
-            alert("Acesso não autorizado. Apenas estoquistas podem acessar esta página.");
-            window.location.href = "/ecommerce/frontend/index.html";
-            return false;
-        }
-
-        return true;
-    } catch (error) {
-        console.error("Erro ao verificar sessão:", error);
-        alert("Erro ao verificar permissão. Faça login novamente.");
-        window.location.href = "/ecommerce/frontend/login.html";
-        return false;
-    }
-};
-
 const carregarPedidos = async () => {
     const corpoTabela = document.querySelector("#tabela-corpo");
 
