@@ -8,12 +8,10 @@ document.getElementById('formCadastro').addEventListener('submit', async functio
   const cpf = document.getElementById("cpf").value;
   const dataNascimento = document.getElementById("dataNascimento").value;
   const genero = document.getElementById("genero").value;
-  const tipoUser = document.getElementById("tipoUsuario").value;
 
   if (!validarNome(nome)) return mostrarErro("Nome precisa ter pelo menos 2 palavras com 3 letras cada.");
   if (!validarCPF(cpf)) return mostrarErro("CPF inválido.");
   if (senha !== confirmarSenha) return mostrarErro("Senhas não coincidem.");
-  if (!tipoUser) return mostrarErro("Por favor, selecione o tipo de usuário.");
 
   const enderecoFaturamento = {
     cep: document.getElementById("cep").value,
@@ -36,7 +34,8 @@ document.getElementById('formCadastro').addEventListener('submit', async functio
     complemento: container.querySelector('.complemento').value,
     bairro: container.querySelector('.bairro').value,
     cidade: container.querySelector('.cidade').value,
-    uf: container.querySelector('.uf').value
+    uf: container.querySelector('.uf').value,
+    principal: container.querySelector('.principal').checked
   }));
 
   const dados = {
@@ -44,7 +43,6 @@ document.getElementById('formCadastro').addEventListener('submit', async functio
     email,
     senha,
     cpf,
-    tipo: tipoUser,
     status: "ativo",
     dataNascimento,
     genero,
@@ -63,14 +61,12 @@ document.getElementById('formCadastro').addEventListener('submit', async functio
     if (response.ok) {
       const resultado = await response.json();
 
-      // Salvar dados no localStorage para uso em alterar.html
       const dadosParaArmazenar = {
         nome,
         email,
         cpf,
         dataNascimento,
-        genero,
-        tipoUser
+        genero
       };
       localStorage.setItem('dadosUsuario', JSON.stringify(dadosParaArmazenar));
       localStorage.setItem('enderecos', JSON.stringify([enderecoFaturamento, ...enderecosEntrega]));
@@ -100,7 +96,7 @@ function validarNome(nome) {
 }
 
 function validarCPF(cpf) {
-  return /^\d{11}$/.test(cpf); // Validação simples
+  return /^\d{11}$/.test(cpf);
 }
 
 function validarEndereco(endereco) {
@@ -139,6 +135,10 @@ function adicionarEndereco(copiar = false) {
     <input type="text" class="bairro" placeholder="Bairro" required />
     <input type="text" class="cidade" placeholder="Cidade" required />
     <input type="text" class="uf" placeholder="UF" required />
+    <label>
+      <input type="radio" name="principalEntrega" class="principal" />
+      Principal
+    </label>
   `;
 
   if (copiar) {
